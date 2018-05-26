@@ -8,7 +8,7 @@ Help to get details of all the informations of adult person through database & a
 The project implementer need to keep these things handy.
 
 	1.  Node.js (npm)
-	2.  Angular CLI
+	2.  Angular CLI (Angular 5)
 	3.  Python (Django) (pip)
 
 ### Installation
