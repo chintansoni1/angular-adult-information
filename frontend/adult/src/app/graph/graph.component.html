@@ -1,0 +1,20 @@
+<!--
+author- Chintan Soni
+Date- 26/5/18
+email- chintansoni1@yahoo.in
+-->
+
+<jqxChart style="float:left;"
+    [width]="750" [height]="500"
+    [title]="'Distribution Between male & female'"
+    [showLegend]="true" [enableAnimations]="true" [padding]="padding"
+    [titlePadding]="titlePadding" [source]="sexAdapter" [showBorderLine]="true"
+    [seriesGroups]="seriesGroups" [colorScheme]="'scheme03'" [legendLayout]="legendLayout">
+</jqxChart>
+<jqxChart style="float:left;"
+    [width]="750" [height]="500"
+    [title]="'Distribution Between relationships'"
+    [showLegend]="true" [enableAnimations]="true" [padding]="padding"
+    [titlePadding]="titlePadding" [source]="relAdapter" [showBorderLine]="true"
+    [seriesGroups]="seriesGroups" [colorScheme]="'scheme03'" [legendLayout]="legendLayout">
+</jqxChart>

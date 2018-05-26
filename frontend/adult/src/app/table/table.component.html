@@ -1,0 +1,110 @@
+<!--
+author- Chintan Soni
+Date- 26/5/18
+email- chintansoni1@yahoo.in
+-->
+
+<mat-list>
+  <mat-list-item><label>Filters: </label></mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+	<div>
+      <label>Sex: </label>
+      <mat-radio-group >
+        <mat-radio-button (change)="applyFilter($event)" value="male">Male</mat-radio-button>
+        <mat-radio-button (change)="applyFilter($event)" value="female">Female</mat-radio-button>
+		<mat-radio-button (change)="applyFilter($event)" [checked]="true" value="">None</mat-radio-button>
+      </mat-radio-group>
+	</div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+	<div>
+      <label>Relationship: </label>
+      <mat-radio-group >
+          <mat-radio-button (change)="applyFilter($event)" *ngFor="let rel of relationships" value="{{rel.type}}">{{rel.type}}</mat-radio-button>
+		  <mat-radio-button (change)="applyFilter($event)" [checked]="true" value="">None</mat-radio-button>
+      </mat-radio-group>
+	</div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+	<div>
+      <label>Race: </label>
+      <mat-radio-group >
+          <mat-radio-button (change)="applyFilter($event)" *ngFor="let race of races" value="{{race.type}}">{{race.type}}</mat-radio-button>
+		  <mat-radio-button (change)="applyFilter($event)" [checked]="true" value="">None</mat-radio-button>
+      </mat-radio-group>
+	</div>
+  </mat-list-item>
+</mat-list>
+
+<div class="mat-elevation-z8">
+  <mat-table [dataSource] = "dataSource">
+    <ng-container matColumnDef="age">
+      <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.age}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="workclass">
+      <mat-header-cell *matHeaderCellDef> Workclass </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.workclass}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="fnlwgt">
+      <mat-header-cell *matHeaderCellDef> Fnlwgt </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.fnlwgt}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="education">
+      <mat-header-cell *matHeaderCellDef> Education </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.education}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="education_num">
+      <mat-header-cell *matHeaderCellDef> Education_num </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.education_num}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="marital_status">
+      <mat-header-cell *matHeaderCellDef> Marital_status </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.marital_status}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="occupation">
+      <mat-header-cell *matHeaderCellDef> Occupation </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.occupation}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="relationship">
+      <mat-header-cell *matHeaderCellDef> Relationship </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.relationship}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="race">
+      <mat-header-cell *matHeaderCellDef> Race </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.race}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="sex">
+      <mat-header-cell *matHeaderCellDef> Sex </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.sex}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="capital_gain">
+      <mat-header-cell *matHeaderCellDef> Capital_gain </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.capital_gain}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="capital_loss">
+      <mat-header-cell *matHeaderCellDef> Capital_gain </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.capital_gain}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="hours_per_week">
+      <mat-header-cell *matHeaderCellDef> Hours_per_week </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.hours_per_week}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="native_country">
+      <mat-header-cell *matHeaderCellDef> Native_country </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.native_country}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Listing_of_attributes">
+      <mat-header-cell *matHeaderCellDef> Listing_of_attributes </mat-header-cell>
+      <mat-cell *matCellDef="let adult"> {{adult.Listing_of_attributes}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="column"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: column"></mat-row>
+  </mat-table>
+  <mat-paginator  [pageSize]="20"
+                  showFirstLastButtons>
+ </mat-paginator>
+</div>
