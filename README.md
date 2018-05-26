@@ -25,13 +25,13 @@ The project implementer need to keep these things handy.
 
 		npm install --save @angular/animations
 		
-###Workflow
+### Workflow
 
 1. First home page will be Graphical (Pie Chart) view for 2 attributes Sex & Relationship.
 
 2. Table Button will lead to Table view for all the adult data available in DB with pagination & filter for Sex, Relationship & Race.
 
-###Limitation
+### Limitation
 
 1. This code has been designed to handle filter on table for just 3 parameters Sex, Relationship & Race. Further filter requirement for other attributes need code changes.
 
